@@ -1,0 +1,93 @@
+Aquí tienes el contenido listo para copiar y pegar en tu archivo `README.md`. He estructurado la información de forma profesional para que cualquier persona que visite tu repositorio sepa cómo desplegarlo en segundos.
+
+---
+
+```markdown
+# 🖱️ Clicker Game with Leaderboard
+
+Este proyecto es un juego estilo **Clicker** por tiempo limitado que incluye un sistema de clasificación (Leaderboard) persistente. Utiliza una arquitectura de microservicios con Docker para facilitar su despliegue.
+
+## 📋 Requisitos Previos
+
+Antes de comenzar, asegúrate de tener instalado:
+* [Docker](https://www.docker.com/get-started)
+* [Docker Compose](https://docs.docker.com/compose/install/)
+
+## 🚀 Instalación y Despliegue
+
+Sigue estos pasos para levantar el proyecto en tu máquina local:
+
+1. **Clonar el repositorio** (o copiar el archivo `docker-compose.yml`).
+2. **Navegar a la carpeta** del proyecto en tu terminal.
+3. **Ejecutar el comando de despliegue**:
+   ```bash
+   docker-compose up -d
+
+```
+
+4. **Acceder al juego**: Una vez que los contenedores estén corriendo, abre tu navegador y entra en:
+> **[http://localhost:8080](https://www.google.com/search?q=http://localhost:8080)**
+
+
+
+---
+
+## 🏗️ Estructura de Servicios
+
+El despliegue se compone de dos contenedores principales:
+
+| Servicio | Imagen | Puerto | Descripción |
+| --- | --- | --- | --- |
+| **App** | `izankalimot/juego-web` | `8080` | Interfaz web del juego (Frontend/Backend). |
+| **DB** | `izankalimot/juego-db` | `3306` | Base de Datos MySQL para guardar usuarios y puntajes. |
+
+### Configuración de la Base de Datos
+
+El sistema utiliza las siguientes credenciales por defecto (configuradas en el `docker-compose.yml`):
+
+* **Database:** `juego_db`
+* **User:** `jugador`
+* **Password:** `player_password`
+* **Root Password:** `root_password`
+
+---
+
+## 💾 Persistencia de Datos
+
+El archivo utiliza un **volumen de Docker** llamado `db_data`. Esto garantiza que, aunque detengas o borres los contenedores, los puntajes del ranking **no se pierdan**. Los datos se almacenan de forma segura en tu disco local gestionado por Docker.
+
+## 🛠️ Comandos Útiles
+
+* **Detener el juego:**
+```bash
+docker-compose stop
+
+```
+
+
+* **Eliminar los contenedores (manteniendo los datos):**
+```bash
+docker-compose down
+
+```
+
+
+* **Ver logs en tiempo real (debug):**
+```bash
+docker-compose logs -f
+
+```
+
+
+
+---
+
+¡Diviértete compitiendo por el primer puesto! 🏆
+
+```
+
+---
+
+¿Te gustaría que añada una sección de **"Troubleshooting"** (solución de problemas) por si la base de datos tarda mucho en arrancar?
+
+```
