@@ -68,26 +68,4 @@ docker-compose stop
 * **Eliminar los contenedores (manteniendo los datos):**
 ```bash
 docker-compose down
-
-```
-
-
-* **Ver logs en tiempo real (debug):**
-```bash
-docker-compose logs -f
-
-```
-
-
-
----
-
-¡Diviértete compitiendo por el primer puesto! 🏆
-
-```
-
----
-
-¿Te gustaría que añada una sección de **"Troubleshooting"** (solución de problemas) por si la base de datos tarda mucho en arrancar?
-
 ```
