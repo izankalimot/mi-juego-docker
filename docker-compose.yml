@@ -1,0 +1,26 @@
+services:
+  db:
+
+    image: izankalimot/juego-db:latest 
+    container_name: juego_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: juego_db
+      MYSQL_USER: jugador
+      MYSQL_PASSWORD: player_password
+
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    image: izankalimot/juego-web:latest
+    container_name: juego_app
+    ports:
+      - "8080:80"
+
+    depends_on:
+      - db
+
+volumes:
+  db_data:
